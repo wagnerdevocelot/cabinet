@@ -3,4 +3,4 @@
     %p= time_ago_in_words(doc.created_at)
     %p= truncate(doc.content, length:50)
 
-    
+= link_to 'new doc', new_doc_path    
