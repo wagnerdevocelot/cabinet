@@ -1,11 +1,11 @@
 class DocsController < ApplicationController
+    before_action :find_doc, only: [:show, :edit, :update, :destroy]
     
     def index
-    
+    @docs = Doc.all
     end
     
     def show
-    
     end
 
     def new
@@ -38,11 +38,11 @@ class DocsController < ApplicationController
     private
 
     def doc_params
-        params.require(:doc).permit(:tite, :content)
+        params.require(:doc).permit(:title, :content)
     end
 
     def find_doc
-
+        @doc = Doc.find(params[:id])
     end
 
 
